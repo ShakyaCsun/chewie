@@ -31,7 +31,9 @@ class PlayerWithControls extends StatelessWidget {
     }
 
     Widget _buildPlayerWithControls(
-        ChewieController chewieController, BuildContext context) {
+      ChewieController chewieController,
+      BuildContext context,
+    ) {
       return Stack(
         children: <Widget>[
           chewieController.placeholder ?? Container(),
@@ -49,17 +51,18 @@ class PlayerWithControls extends StatelessWidget {
                 BuildContext context,
                 PlayerNotifier notifier,
                 Widget? widget,
-              ) =>
-                  AnimatedOpacity(
-                opacity: notifier.hideStuff ? 0.0 : 0.8,
-                duration: const Duration(
-                  milliseconds: 250,
-                ),
-                child: Container(
-                  decoration: const BoxDecoration(color: Colors.black54),
-                  child: Container(),
-                ),
-              ),
+              ) {
+                return AnimatedOpacity(
+                  opacity: notifier.hideStuff ? 0.0 : 0.8,
+                  duration: const Duration(
+                    milliseconds: 250,
+                  ),
+                  child: Container(
+                    decoration: const BoxDecoration(color: Colors.black54),
+                    child: Container(),
+                  ),
+                );
+              },
             ),
           if (!chewieController.isFullScreen)
             _buildControls(context, chewieController)
