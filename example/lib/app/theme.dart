@@ -6,6 +6,7 @@ class AppTheme {
     colorScheme: const ColorScheme.light().copyWith(secondary: Colors.red),
   ).copyWith(
     brightness: Brightness.light,
+    colorScheme: const ColorScheme.dark(secondary: Colors.red),
     disabledColor: Colors.grey.shade400,
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
@@ -14,6 +15,7 @@ class AppTheme {
     colorScheme: const ColorScheme.dark().copyWith(secondary: Colors.red),
   ).copyWith(
     brightness: Brightness.dark,
+    colorScheme: const ColorScheme.dark(secondary: Colors.red),
     disabledColor: Colors.grey.shade400,
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
